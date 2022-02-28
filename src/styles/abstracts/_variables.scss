@@ -1,0 +1,51 @@
+// Colors
+$black: hsl(0, 0%, 3%); // #000000
+$grey0: hsl(0, 0%, 96%); // #F5F5F5
+$grey1: hsl(0, 0%, 68%); // #ADADAD
+$grey1tr: hsl(0, 0%, 68%, 0.67); // #ADADAD transparent
+$grey2: hsl(0, 0%, 90%); // #E6E6E6
+$blue-shade1: hsl(252, 45%, 48%); // #5943b0
+$blue-shade2: hsl(252, 76%, 88%); // #e1daff
+$magenta-pink: hsl(324, 72%, 56%); // #e03ea0
+$magenta-pink-light: #e66ab4; // #e03ea0
+$pale-blue: #a0f1ea; // #a0f1ea bg-spot
+$very-light-purple: #ead6ee; // #ead6ee bg-spot
+$main-color: #9f40a8;
+$gradient: linear-gradient(90deg, $magenta-pink 0%, $blue-shade1 100%);
+$black-gradient: linear-gradient(90deg, $black 10%, hsla(0, 0%, 0%, 0) 100%);
+$very-soft-cyan: hsl(181, 59%, 81%); // ~b2eaeb
+$light-grayish-violet: hsl(273, 39%, 89%); // ~e4d8ee
+
+$background-color: $grey0; // html backgraund-color
+$body-background-color: $background-color;
+$navbar-background-color: $background-color;
+$family-title: 'Titillium Web', sans-serif;
+$family-sans-serif: 'Montserrat', sans-serif;
+$text: $black;
+$link: $grey1;
+$link-visited: $grey1;
+$link-hover: $black;
+$link-active: $black;
+$body-size: 14px;
+$button-color: $grey1;
+$size-3: 2.5rem;
+$dimensions: 52 224;
+$card-shadow: none;
+$card-radius: 1rem;
+$radius-large: 1rem;
+
+$pagination-border-color: transparent;
+$pagination-hover-border-color: transparent;
+$pagination-active-border-color: transparent;
+$pagination-ellipsis-color: $grey1;
+
+$tabs-link-color: $grey1;
+$tabs-link-hover-color: $black;
+
+// Fontawesome
+// $fa-font-path: './fonts' !default;
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims';
