@@ -1,0 +1,306 @@
+@import 'genres-grid';
+@import 'track';
+@import 'popup';
+@import 'variables';
+@import 'card';
+@import 'music-search-section';
+
+.main-container {
+  .bg-spot {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+
+    &--blue {
+      width: 130px;
+      height: 130px;
+      left: 15%;
+      filter: blur(7rem);
+      background-color: $pale-blue;
+    }
+    &--purple {
+      width: 400px;
+      height: 400px;
+      left: 45%;
+      top: 25%;
+      filter: blur(2rem);
+      background-color: $very-light-purple;
+      opacity: 0.5;
+    }
+  }
+  // .spot-1,
+  // .spot-2 {
+  //   width: 28vw;
+  //   height: 28vw;
+  //   z-index: -1;
+  // }
+  // .spot-1 {
+  //   background: radial-gradient(
+  //     ellipse at center,
+  //     $light-grayish-violet 10%,
+  //     hsla(273, 39%, 89%, 0) 75%
+  //   );
+  //   top: -7vw;
+  //   left: -2vw;
+  // }
+  // .spot-2 {
+  //   background: radial-gradient(
+  //     ellipse at center,
+  //     $very-soft-cyan 10%,
+  //     hsla(181, 59%, 81%, 0) 75%
+  //   );
+  //   top: 2vw;
+  //   left: 45vw;
+  // }
+}
+
+// ==== Menu ==== //
+.menu {
+  background: $black;
+}
+.menu .navbar-burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  border-color: transparent;
+  span {
+    background-color: $grey1;
+  }
+
+  &:hover {
+    background: transparent;
+    span {
+      background-color: #fff;
+    }
+  }
+}
+
+.navbar-burger {
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+  &:hover {
+    background-color: transparent;
+    border: none;
+    border-color: transparent;
+  }
+  span {
+    height: 2px;
+    width: 20px;
+  }
+}
+
+.menu .tabs {
+  .is-active,
+  li:hover,
+  li:active {
+    a {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+  }
+  @media (max-width: 520px) {
+    ul {
+      display: inherit;
+    }
+  }
+}
+
+.tabButton {
+  display: flex;
+  justify-content: center;
+
+  border: none;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  align-items: center;
+  color: #adadad;
+
+  padding: 0.5em 1em;
+  vertical-align: top;
+}
+.tabButton.is-medium {
+  font-size: $size-medium;
+}
+
+.tabs {
+  a {
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+  }
+  .is-active,
+  li:hover,
+  li:active {
+    button {
+      border-bottom: 2px solid black;
+      color: black;
+    }
+  }
+  @media (max-width: 520px) {
+    ul {
+      display: inherit;
+    }
+  }
+}
+
+.button {
+  &.is-active,
+  &:hover,
+  &:active {
+    @include button-colored;
+    .icon {
+      color: #fff !important;
+    }
+  }
+}
+
+li {
+  &:hover,
+  &:active {
+    .icon {
+      color: $black !important;
+    }
+  }
+}
+
+.title {
+  white-space: nowrap;
+}
+.tops__menu--offset {
+  top: -1px;
+}
+.tabs ul {
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+}
+
+// .button {
+//   &:hover,
+//   &:active {
+//     @include button-colored;
+//   }
+//   &.is-active {
+//     @include button-colored;
+//   }
+// }
+
+.tags .tag-icon {
+  fill: $black;
+  color: $black !important;
+}
+
+// ==== Changed original Bulma styles ====
+.pagination-ellipsis {
+  cursor: pointer;
+  pointer-events: all;
+}
+.pagination-link,
+.pagination-next,
+.pagination-previous {
+  justify-content: center;
+  &:hover,
+  &:active {
+    @include button-colored;
+  }
+}
+.is-current {
+  @include button-colored;
+}
+.pagination-link.is-current {
+  background-color: transparent;
+  // border-color: transparent;
+}
+
+p {
+  color: $black;
+}
+
+.button-link {
+  @extend %btn-reset;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $blue-shade1;
+  .icon {
+    cursor: pointer;
+    color: $blue-shade1;
+  }
+  &:hover {
+    color: $magenta-pink;
+
+    .icon {
+      color: $magenta-pink !important;
+    }
+  }
+}
+
+th {
+  .icon {
+    color: $black !important;
+  }
+  &:hover {
+    .icon {
+      color: $black !important;
+    }
+  }
+}
+
+.navbar > .container .navbar-menu,
+.container > .navbar .navbar-menu {
+  @media screen and (min-width: 1024px) {
+    margin-right: -0.75rem;
+  }
+}
+// ==== End Changed original Bulma styles ====
+
+.genres__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 1rem 3%;
+}
+
+//  ===== Modal ======== //
+
+.more-modal {
+  z-index: 1;
+  width: 260px;
+  background-color: white;
+
+  &--track {
+    top: 17px;
+    right: 30px;
+  }
+
+  &--playlist {
+    left: 100%;
+    top: 21px;
+  }
+}
+
+// ==== Links to string ==== //
+.stringLinks a {
+  color: $black;
+  text-decoration: underline;
+
+  &:hover {
+    color: $grey1 !important;
+  }
+}
+.stringLinks a:not(:last-child)::after {
+  content: ', ';
+}
+
+// ==== Tag Link ==== //
+.tagLink {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none !important;
+    background-color: $magenta-pink-light !important;
+    color: white !important;
+  }
+}

@@ -1,0 +1,126 @@
+.text-color1 {
+  color: $blue-shade1 !important;
+}
+.text-colored {
+  // color: $blue-shade1 !important;
+  @extend .text-color1;
+  &:hover,
+  &:active {
+    color: #fff !important;
+  }
+}
+
+.has-text-danger {
+  color: $magenta-pink
+}
+
+.top-line {
+  &--gray1 {
+    border-top: 1px solid $grey1;
+  }
+}
+.bottom-line {
+  border-bottom: 2px solid #fff;
+}
+
+.is-transparent {
+  background-color: transparent !important;
+}
+
+.is-rounded-image {
+  border-radius: 50% !important;
+}
+.is-roundsquared-image {
+  border-radius: $card-radius !important;
+}
+
+.has-color-shadow {
+  &:hover {
+    @extend %box-shadow;
+  }
+}
+
+.is-visible {
+  overflow: visible !important;
+}
+
+.has-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.has-centered-v {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+.has-centered-w {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.is-radius-large {
+  border-radius: $radius-large !important;
+}
+
+.is-image-stretched {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.has-h-5 {
+  height: 5rem;
+}
+
+.has-gradient-x {
+  background: $black-gradient;
+}
+
+.is-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.is-absolute {
+  position: absolute !important;
+}
+
+.is-float-r {
+  float: right;
+}
+
+.is-128x128 {
+  width: 128px;
+  height: 128px;
+}
+.is-256x256 {
+  width: 256px;
+  height: 256px;
+}
+.is-352x352 {
+  width: 352px;
+  height: 352px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%
+}

@@ -1,0 +1,23 @@
+@mixin button-colored {
+  background: $gradient;
+  color: #fff !important;
+  border: 1px solid transparent;
+}
+
+%box-shadow {
+  box-shadow: 4px 4px 14px rgba($blue-shade1, 0.45) !important;
+}
+
+%btn-reset {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}

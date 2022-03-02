@@ -1,0 +1,27 @@
+.genres__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 1rem 3%;
+
+  .title {
+    // font-size: 1.75rem;
+    @media (max-width: 768px) {
+      // font-size: 1.5rem;
+    }
+    @media (max-width: 520px) {
+      // font-size: 2rem;
+    }
+  }
+}
+
+.genres__title {
+  line-height: 2rem;
+  white-space: normal !important;
+;
+}
+
+// @media (max-width: 1000px) {
+//   .genres__title {
+//     white-space: normal;
+//   }
+// }
