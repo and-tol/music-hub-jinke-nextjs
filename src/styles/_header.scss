@@ -1,0 +1,26 @@
+.logo {
+  font-family: 'Tittilium Web', sans-serif;
+  font-weight: 800;
+
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// .tabs a,
+.tabs ul {
+  border-bottom: none;
+}
+.tabs a {
+  padding-bottom: 9px;
+  padding-top: 13px;
+}
+.tabs li.is-active a,
+.tabs a:hover {
+  border-bottom: 2px solid $black;
+  color: $black;
+}
+
+.tabs:not(:last-child) {
+  margin-bottom: 0;
+}

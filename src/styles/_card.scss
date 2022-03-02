@@ -1,0 +1,53 @@
+// Card of Album
+.card-album {
+}
+
+.card-content {
+  width: 0;
+  min-width: 100%;
+  overflow: hidden;
+  @media (max-width: 762px) {
+    padding: 1.5rem !important;
+  }
+}
+
+.media-content {
+  min-height: 36px;
+
+  .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @media (max-width: 768px) {
+      font-size: 1.35rem;
+      line-height: 1.5;
+    }
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.card-image {
+  overflow: hidden;
+
+  .image {
+    overflow: hidden;
+  }
+}
+
+.card-image .offset {
+  position: absolute;
+  bottom: -1.75rem;
+  z-index: 2;
+  right: 0.75rem;
+}

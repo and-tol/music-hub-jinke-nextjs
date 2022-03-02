@@ -2,29 +2,33 @@ import Link from 'next/link';
 import { FC, ReactElement, useEffect, useState } from 'react';
 import cls from 'classnames';
 import { useRouter } from 'next/router';
+import { configMenu } from '../../../constants';
+import { LogoElement } from '../../../elements/logo';
+import { useActiveMenu } from '../../../hooks/useActiveMenu';
 
 type PropsType = {
   children?: never;
 };
 
 export const HeaderComponent: FC<PropsType> = (): ReactElement => {
-  const { pathname } = useRouter();
-  console.log(pathname);
-  const [activeMenuItem, setActiveMenuItem] = useState('/');
+  // const { pathname } = useRouter();
+  // const [activeMenuItem, setActiveMenuItem] = useState('/');
 
   // TODO проверить неоходимость хелпера
   // const currentLocation = getCurrentLocation(location);
 
+  // // useEffect(() => {
+  // //   setActiveMenuItem(`nav-${currentLocation}`);
+  // // }, [currentLocation]);
   // useEffect(() => {
-  //   setActiveMenuItem(`nav-${currentLocation}`);
-  // }, [currentLocation]);
-  useEffect(() => {
-    setActiveMenuItem(`nav-${pathname}`);
-  }, [pathname]);
+  //   setActiveMenuItem(`nav-${pathname}`);
+  // }, [pathname]);
 
-  const handleNavActive = (navId: any): void => {
-    setActiveMenuItem(navId);
-  };
+  // const handleNavActive = (navId: any): void => {
+  //   setActiveMenuItem(navId);
+  // };
+
+  const {activeMenuItem, handleNavActive } = useActiveMenu();
 
   // -------------------
   const [isActiveBurger, setIsActiveBurger] = useState(false);
@@ -45,11 +49,7 @@ export const HeaderComponent: FC<PropsType> = (): ReactElement => {
         >
           <div className='container'>
             <div className='navbar-brand'>
-              <Link href='/'>
-                <a className='navbar-item' onClick={() => handleNavActive('/')}>
-                  <h1 className='title is-4 logo'>MediaHub</h1>
-                </a>
-              </Link>
+              <LogoElement />
 
               {/* Burger menu */}
               <button
@@ -84,9 +84,9 @@ export const HeaderComponent: FC<PropsType> = (): ReactElement => {
                           onClick={() => handleNavActive(tab.id)}
                         >
                           {tab.toHash ? (
-                            <HashLink smooth to={`/#${tab.toHash}`} id={tab.id}>
-                              {tab.text}
-                            </HashLink>
+                            <Link href={`/#${tab.toHash}`} as='/'>
+                              <a id={tab?.id}>{tab.text}</a>
+                            </Link>
                           ) : (
                             <Link href={`/${tab.to}`}>
                               <a id={tab.id}>{tab.text}</a>

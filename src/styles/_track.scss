@@ -1,0 +1,125 @@
+// Track styles
+.track,
+.track-header {
+  max-width: 700px;
+  height: 40px;
+  &__start-column {
+    // flex: 0 0 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60px;
+    overflow: hidden;
+    width: 60px;
+    min-height: 20px;
+  }
+  &__info-column {
+    white-space: nowrap;
+    overflow: hidden;
+    // width: 50%;
+    // min-width: 0;
+  }
+  &__album-column {
+    width: 30%;
+  }
+  &__more-column {
+    width: 30px;
+    height: 40px;
+  }
+}
+
+.track {
+  border-radius: 1rem;
+  &:hover {
+    background-color: $grey2;
+    .track__loved-track-column .icon-heart,
+    .track__more-column .icon-more {
+      display: flex;
+    }
+  }
+
+  &--background {
+    background-color: $grey2;
+  }
+}
+
+.track__loved-track-column {
+  width: 26px;
+}
+
+.start-column {
+  &__index,
+  &__play-icon,
+  &__playing-icon,
+  &__paused-icon {
+    display: block;
+    color: $blue-shade1;
+    width: 100%;
+    // padding: 12px 20px 12px 12px;
+  }
+
+  // &__play-icon,
+  // &__playing-icon,
+  // &__paused-icon {
+  //   color: $blue-shade1;
+  // }
+
+  &--active {
+    display: inline;
+  }
+  &--hide {
+    display: none;
+  }
+}
+
+.icon.icon-heart,
+.icon.icon-more {
+  display: none;
+  &.active {
+    color: $magenta-pink !important;
+  }
+}
+.icon.icon-more {
+  width: 30px;
+}
+
+.play-lists-modal {
+  display: none;
+  top: -7px;
+  right: 99%;
+  z-index: 2;
+  min-width: 260px;
+  background-color: white;
+
+  max-height: 400px;
+  overflow: auto;
+}
+.action-row {
+  color: $black;
+
+  &:hover {
+    background: $gradient;
+    color: white;
+    .icon {
+      color: white !important;
+    }
+  }
+}
+
+.addToPlaylist:hover .play-lists-modal {
+  display: block;
+}
+
+// .play-ctrl .bubble {
+//   display: none;
+//   position: relative;
+//   z-index: 1;
+//   backface-visibility: hidden;
+//   animation: bubble_out 0.6s ease-in-out infinite both;
+//   position: absolute;
+//   width: 12px;
+//   height: 12px;
+//   top: 14px;
+//   left: 14px;
+//   border-radius: 6px;
+//   background-color: $magenta-pink;
+// }

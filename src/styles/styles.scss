@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Titillium+Web:wght@700;900&display=swap" rel="stylesheet"');
+
+// @import "~react-bulma-components/src/index.sass";
+
+//  Update Bulma's variables
+@import './variables';
+@import './mixins';
+
+// Import only what you need from Bulma
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../node_modules/bulma/sass/base/_all.sass';
+@import '../../node_modules/bulma/sass/grid/columns.sass';
+@import '../../node_modules/bulma/sass/elements/box.sass';
+@import '../../node_modules/bulma/sass/elements/button.sass';
+@import '../../node_modules/bulma/sass/elements/container.sass';
+@import '../../node_modules/bulma/sass/elements/title.sass';
+@import '../../node_modules/bulma/sass/elements/image.sass';
+@import '../../node_modules/bulma/sass/elements/icon.sass';
+@import '../../node_modules/bulma/sass/elements/notification.sass';
+@import '../../node_modules/bulma/sass/elements/tag.sass';
+@import '../../node_modules/bulma/sass/elements/table.sass';
+@import '../../node_modules/bulma/sass/elements/other.sass';
+@import '../../node_modules/bulma/sass/form/_all.sass';
+@import '../../node_modules/bulma/sass/components/navbar.sass';
+@import '../../node_modules/bulma/sass/components/tabs.sass';
+@import '../../node_modules/bulma/sass/components/card.sass';
+@import '../../node_modules/bulma/sass/components/level.sass';
+@import '../../node_modules/bulma/sass/components/menu.sass';
+@import '../../node_modules/bulma/sass/components/pagination.sass';
+@import '../../node_modules/bulma/sass/layout/section.sass';
+@import '../../node_modules/bulma/sass/layout/hero.sass';
+@import '../../node_modules/bulma/sass/helpers/other.sass';
+@import '../../node_modules/bulma/sass/helpers/flexbox.sass';
+@import '../../node_modules/bulma/sass/helpers/spacing.sass';
+@import '../../node_modules/bulma/sass/helpers/typography.sass';
+@import '../../node_modules/bulma/sass/helpers/_all.sass';
+@import '../../node_modules/bulma/sass/utilities/mixins.sass';
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+
+// Styles
+@import 'helpers';
+@import 'header';
+@import 'main';
+
+
+// Common stylesheet
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body,
+#root {
+  height: 100%;
+}
+
+.text--blue,
+.control.has-icons-right .icon,
+.icon {
+  color: $blue-shade1 !important;
+  &:hover {
+    color: $magenta-pink !important;
+  }
+}
+
+.button.has-text-dark:hover, .button.has-text-dark:focus {
+    color: white !important;
+}
+
+
+// Music player styles
+$music-player-panel-height: 80px;
+#root {
+  padding-bottom: $music-player-panel-height + 20px;
+}
+
+// with hover music-player compact mode set cursor move
+.react-jinke-music-player{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-jinke-music-player .music-player:hover {
+  cursor: move;
+}
+
+.music-player .destroy-btn {
+  cursor: pointer;
+}
+
+.player-spacer {
+  height: 150px;
+}
