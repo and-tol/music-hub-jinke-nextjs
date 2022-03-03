@@ -1,6 +1,5 @@
 import { GetStaticProps, NextPage } from 'next';
 import { ReactElement } from 'react';
-import { HeaderComponent } from '../components/common/header';
 import { AppView } from '../views/app';
 
 type PropsType = {
@@ -10,7 +9,7 @@ type PropsType = {
 const AlbumsPage: NextPage<PropsType> = (): ReactElement => {
   return (
     <>
-      <AppView header={<HeaderComponent />} content={<div>Albums Page</div>} />
+      <AppView content={<div>Albums Page</div>} />
     </>
   );
 };

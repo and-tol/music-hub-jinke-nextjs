@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 // Other
 import '../styles/styles.scss'
+import { HeaderComponent } from '../components/common/header';
 
 // const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
+          <HeaderComponent />
           <Component {...pageProps} />
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={true} />
