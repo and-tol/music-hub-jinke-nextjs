@@ -1,10 +1,14 @@
+// Core
 import Link from 'next/link';
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { FC, ReactElement } from 'react';
 import cls from 'classnames';
-import { useRouter } from 'next/router';
-import { configMenu } from '../../../constants';
+// Elements
 import { LogoElement } from '../../../elements/logo';
+import { BurgerMenuElement } from '../../../elements/burgerMenu';
+// Other
+import { configMenu } from '../../../constants';
 import { useActiveMenu } from '../../../hooks/useActiveMenu';
+import { SearchFormComponent } from '../../searchForm';
 
 type PropsType = {
   children?: never;
@@ -30,14 +34,7 @@ export const HeaderComponent: FC<PropsType> = (): ReactElement => {
 
   const {activeMenuItem, handleNavActive } = useActiveMenu();
 
-  // -------------------
-  const [isActiveBurger, setIsActiveBurger] = useState(false);
-  const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
-  const handleBurgerActive = () => {
-    setIsActiveBurger(!isActiveBurger);
-    setIsShowMobileMenu(!isShowMobileMenu);
-    // "is-flex-touch"
-  };
+
 
   return (
     <>
@@ -51,21 +48,8 @@ export const HeaderComponent: FC<PropsType> = (): ReactElement => {
             <div className='navbar-brand'>
               <LogoElement />
 
-              {/* Burger menu */}
-              <button
-                id='menu-open'
-                className={cls('navbar-burger', isActiveBurger && 'is-active')}
-                aria-label='menu'
-                aria-expanded='false'
-                data-target='navbarBasicExample'
-                onClick={handleBurgerActive}
-              >
-                {/* <div> */}
-                <span aria-hidden='true'></span>
-                <span aria-hidden='true'></span>
-                <span aria-hidden='true'></span>
-                {/* </div> */}
-              </button>
+              <BurgerMenuElement />
+
               <div className=''></div>
             </div>
             <div className='navbar-menu'>
@@ -99,7 +83,7 @@ export const HeaderComponent: FC<PropsType> = (): ReactElement => {
                 </div>
                 {/* Search */}
                 <div className='block is-flex is-align-items-center ml-3'>
-                  {/* <SearchForm /> */}
+                  <SearchFormComponent />
                 </div>
               </div>
               {/* Login */}

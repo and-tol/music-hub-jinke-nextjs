@@ -1,7 +1,7 @@
 type PageMenuType = {
   toHash: string;
   to: string;
-  id?: string;
+  id: string;
   slug?: string;
   text: string;
 };
