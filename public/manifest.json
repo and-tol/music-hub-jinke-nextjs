@@ -1,0 +1,15 @@
+{
+  "short_name": "Music Hub",
+  "name": "Music Hub on react-jinke-music-player",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/smg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

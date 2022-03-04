@@ -1,4 +1,5 @@
 import { FC, ReactElement } from 'react';
+import { HeaderComponent } from '../../components/common/header';
 
 type PropsType = {
   content: ReactElement;
@@ -6,5 +7,12 @@ type PropsType = {
 };
 
 export const AppView: FC<PropsType> = ({ content }): ReactElement => {
-  return <>{content}</>;
+  return (
+    <div className='main-container is-relative h-100'>
+      <div className='bg-spot bg-spot--purple'></div>
+      <div className='bg-spot bg-spot--blue'></div>
+      <HeaderComponent />
+      {content}
+    </div>
+  );
 };

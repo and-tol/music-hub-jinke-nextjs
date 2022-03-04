@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 type PropsType = {
   description?: string;
-  siteTitle: string;
+  siteTitle?: string;
   pageTitle?: string;
 };
 
@@ -13,12 +13,12 @@ const config = Object.freeze({
 
 export default function SEOComponent({
   description,
-  siteTitle,
+  siteTitle = 'Music Hub',
   pageTitle,
 }: PropsType): ReactElement {
   return (
     <Head>
-      <title>{`${siteTitle} | ${pageTitle}`}</title>
+      <title>{pageTitle ? `${siteTitle} | ${pageTitle}` : siteTitle}</title>
       <meta name='description' content={description} />
       <meta property='og:type' content='website' />
       <meta property='og:title' content={siteTitle} />

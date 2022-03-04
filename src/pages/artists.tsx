@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import { ReactElement } from 'react';
+import SEOComponent from '../components/common/seo';
 import { AppView } from '../views/app';
 
 type PropsType = {
@@ -9,6 +10,7 @@ type PropsType = {
 const ArtistsPage: NextPage<PropsType> = (): ReactElement => {
   return (
     <>
+      <SEOComponent pageTitle='Artists' />
       <AppView content={<div>Artists Page</div>} />
     </>
   );

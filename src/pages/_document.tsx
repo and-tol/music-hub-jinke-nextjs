@@ -16,8 +16,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-
-          <meta name='description' content='Hub for your loved music' />
           <link
             href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Titillium+Web:wght@700;900&display=swap'
             rel='stylesheet'
