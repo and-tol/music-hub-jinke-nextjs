@@ -1,8 +1,8 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { HeaderComponent } from '../../components/common/header';
 
 type PropsType = {
-  content: ReactElement;
+  content: ReactNode;
   children?: never;
 };
 
@@ -12,7 +12,7 @@ export const AppView: FC<PropsType> = ({ content }): ReactElement => {
       <div className='bg-spot bg-spot--purple'></div>
       <div className='bg-spot bg-spot--blue'></div>
       <HeaderComponent />
-      {content}
+      <main className='main'>{content}</main>
     </div>
   );
 };

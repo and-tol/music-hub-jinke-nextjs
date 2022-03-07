@@ -1,4 +1,10 @@
-type PageMenuType = {
+export interface IPageTopMenuType {
+  toHash: string;
+  id: string;
+  slug?: string;
+  text: string;
+};
+export interface IPageMenuType extends IPageTopMenuType  {
   toHash: string;
   to: string;
   id: string;
@@ -21,11 +27,11 @@ export type ConfigMenuType = {
     toAlbums: string;
     toGenres: string;
   };
-  HeaderMenu: PageMenuType[];
-  homePage: { topsOfTheTopsMenu: Omit<PageMenuType, 'to'>[] };
-  artistsPage: { topMenu: Omit<PageMenuType, 'to'>[] };
-  albumsPage: { topMenu: Omit<PageMenuType, 'to'>[] };
-  artistPage: { menu: PageMenuType[] };
+  HeaderMenu: IPageMenuType[];
+  homePage: { topsOfTheTopsMenu: IPageMenuType[] };
+  artistsPage: { topMenu: IPageTopMenuType[] };
+  albumsPage: { topMenu: IPageTopMenuType[] };
+  artistPage: { menu: IPageTopMenuType[] };
   generatePlaylistPage: { pageSize: number };
   playlists: { showItems: number };
   genres: { count: number };
