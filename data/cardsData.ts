@@ -1,0 +1,51 @@
+export const cardsData = [
+  {
+    id: '01',
+    img: 'img01.png',
+    faceImg: 'face1.png',
+    title: 'K BAND live record',
+    subtitle: '1999 Amsterdam',
+  },
+  {
+    id: '02',
+    img: 'img02.png',
+    faceImg: 'face2.png',
+    title: 'Vocal Chillout for the Soul',
+    subtitle: 'Various artists',
+  },
+  {
+    id: '03',
+    img: 'img03.png',
+    faceImg: 'face3.png',
+    title: '90`s HITS',
+    subtitle: 'Drive music, dinamic nostalgie',
+  },
+  {
+    id: '04',
+    img: 'img04.png',
+    faceImg: 'face4.png',
+    title: 'Sweet Escape',
+    subtitle: 'Meditation Relax music',
+  },
+  {
+    id: '05',
+    img: 'img05.png',
+    faceImg: 'face5.png',
+    title: 'Sweet Escape',
+    subtitle: 'Meditation Relax music',
+  },
+  {
+    id: '06',
+    img: 'img05.png',
+    faceImg: null,
+    title: 'China town beats',
+    subtitle: 'Alternative Tehno',
+  },
+  {
+    id: '07',
+    img: 'img05.png',
+    faceImg: null,
+    title: 'China town beats',
+    subtitle: 'Alternative Tehno',
+  },
+];

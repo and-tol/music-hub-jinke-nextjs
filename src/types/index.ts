@@ -3,14 +3,10 @@ export interface IPageTopMenuType {
   id: string;
   slug?: string;
   text: string;
-};
-export interface IPageMenuType extends IPageTopMenuType  {
-  toHash: string;
+}
+export interface IPageMenuType extends IPageTopMenuType {
   to: string;
-  id: string;
-  slug?: string;
-  text: string;
-};
+}
 
 export type ConfigMenuType = {
   tops: { text: string; count: number; id: string };
@@ -28,10 +24,16 @@ export type ConfigMenuType = {
     toGenres: string;
   };
   HeaderMenu: IPageMenuType[];
-  homePage: { topsOfTheTopsMenu: IPageMenuType[] };
+  homePage: {
+    topsOfTheTopsMenu: IPageTopMenuType[];
+    topAlbumsMenu: {
+      [key: string]: string;
+    };
+    topArtistsMenu: { [key: string]: string };
+  };
   artistsPage: { topMenu: IPageTopMenuType[] };
   albumsPage: { topMenu: IPageTopMenuType[] };
-  artistPage: { menu: IPageTopMenuType[] };
+  artistPage: { menu: Omit<IPageMenuType, 'id'>[] };
   generatePlaylistPage: { pageSize: number };
   playlists: { showItems: number };
   genres: { count: number };

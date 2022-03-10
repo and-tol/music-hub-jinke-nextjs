@@ -1,0 +1,9 @@
+/* Color */
+:root {
+  /* #000000 */
+  --black: hsl(0, 0%, 3%);
+  /* #e03ea0 */
+  --magenta-pink-light: hsl(324, 71%, 66%);
+  /* #e1daff */
+  --blue-shade2: hsl(252, 76%, 88%);
+}

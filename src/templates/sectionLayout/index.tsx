@@ -2,7 +2,6 @@ import { FC, ReactElement, ReactNode } from 'react';
 
 type PropsType = {
   id: string;
-  // children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
   children: ReactNode;
   className?: string;
 };
