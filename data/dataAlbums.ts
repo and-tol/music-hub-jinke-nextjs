@@ -1,6 +1,6 @@
 export const dataAlbums = [
   {
-    id: 2481,
+    id: '2481',
     name: 'Dangerous Woman',
     short_description:
       'Dangerous Woman is the third studio album by American singer Ariana Grande and was released on May 20, 2016, by Republic Records. \nGrande...',
@@ -19,34 +19,34 @@ export const dataAlbums = [
       speed: 'Medium',
       genre: [
         {
-          id: 2462,
+          id: '2462',
           name: 'Urban/R&amp;B',
           slug: 'urban-rb',
         },
         {
-          id: 2466,
+          id: '2466',
           name: 'Pop',
           slug: 'pop',
         },
         {
-          id: 2480,
+          id: '2480',
           name: 'Universal Records',
           slug: 'universal-records',
         },
         {
-          id: 2478,
+          id: '2478',
           name: 'Happy',
           slug: 'happy',
         },
         {
-          id: 2439,
+          id: '2439',
           name: 'Medium',
           slug: 'medium',
         },
       ],
       images: {
         thumb:
-          'http://codecanyon.lv/wp-content/uploads/2020/07/dangerous-woman-57060f400a60c.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/a/a4/Dangerous_Woman_Tour_in_Manchester4_%28cropped%29.jpg',
         thumb_hq: null,
         thumb_back:
           'http://codecanyon.lv/wp-content/uploads/2020/07/wwvyrr1552907652.jpg',
@@ -63,7 +63,7 @@ export const dataAlbums = [
     },
   },
   {
-    id: 2482,
+    id: '2482',
     name: 'Dangerous Woman',
     short_description:
       'Dangerous Woman is the third studio album by American singer Ariana Grande and was released on May 20, 2016, by Republic Records. \nGrande...',
@@ -82,34 +82,34 @@ export const dataAlbums = [
       speed: 'Medium',
       genre: [
         {
-          id: 2462,
+          id: '2462',
           name: 'Urban/R&amp;B',
           slug: 'urban-rb',
         },
         {
-          id: 2466,
+          id: '2466',
           name: 'Pop',
           slug: 'pop',
         },
         {
-          id: 2480,
+          id: '2480',
           name: 'Universal Records',
           slug: 'universal-records',
         },
         {
-          id: 2478,
+          id: '2478',
           name: 'Happy',
           slug: 'happy',
         },
         {
-          id: 2439,
+          id: '2439',
           name: 'Medium',
           slug: 'medium',
         },
       ],
       images: {
         thumb:
-          'http://codecanyon.lv/wp-content/uploads/2020/07/dangerous-woman-57060f400a60c.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/a/a4/Dangerous_Woman_Tour_in_Manchester4_%28cropped%29.jpg',
         thumb_hq: null,
         thumb_back:
           'http://codecanyon.lv/wp-content/uploads/2020/07/wwvyrr1552907652.jpg',
@@ -126,7 +126,7 @@ export const dataAlbums = [
     },
   },
   {
-    id: 2483,
+    id: '2483',
     name: 'Dangerous Woman',
     short_description:
       'Dangerous Woman is the third studio album by American singer Ariana Grande and was released on May 20, 2016, by Republic Records. \nGrande...',
@@ -145,34 +145,34 @@ export const dataAlbums = [
       speed: 'Medium',
       genre: [
         {
-          id: 2462,
+          id: '2462',
           name: 'Urban/R&amp;B',
           slug: 'urban-rb',
         },
         {
-          id: 2466,
+          id: '2466',
           name: 'Pop',
           slug: 'pop',
         },
         {
-          id: 2480,
+          id: '2480',
           name: 'Universal Records',
           slug: 'universal-records',
         },
         {
-          id: 2478,
+          id: '2478',
           name: 'Happy',
           slug: 'happy',
         },
         {
-          id: 2439,
+          id: '2439',
           name: 'Medium',
           slug: 'medium',
         },
       ],
       images: {
         thumb:
-          'http://codecanyon.lv/wp-content/uploads/2020/07/dangerous-woman-57060f400a60c.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/a/a4/Dangerous_Woman_Tour_in_Manchester4_%28cropped%29.jpg',
         thumb_hq: null,
         thumb_back:
           'http://codecanyon.lv/wp-content/uploads/2020/07/wwvyrr1552907652.jpg',
@@ -189,7 +189,7 @@ export const dataAlbums = [
     },
   },
   {
-    id: 2484,
+    id: '2484',
     name: 'Dangerous Woman',
     short_description:
       'Dangerous Woman is the third studio album by American singer Ariana Grande and was released on May 20, 2016, by Republic Records. \nGrande...',
@@ -208,34 +208,34 @@ export const dataAlbums = [
       speed: 'Medium',
       genre: [
         {
-          id: 2462,
+          id: '2462',
           name: 'Urban/R&amp;B',
           slug: 'urban-rb',
         },
         {
-          id: 2466,
+          id: '2466',
           name: 'Pop',
           slug: 'pop',
         },
         {
-          id: 2480,
+          id: '2480',
           name: 'Universal Records',
           slug: 'universal-records',
         },
         {
-          id: 2478,
+          id: '2478',
           name: 'Happy',
           slug: 'happy',
         },
         {
-          id: 2439,
+          id: '2439',
           name: 'Medium',
           slug: 'medium',
         },
       ],
       images: {
         thumb:
-          'http://codecanyon.lv/wp-content/uploads/2020/07/dangerous-woman-57060f400a60c.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/a/a4/Dangerous_Woman_Tour_in_Manchester4_%28cropped%29.jpg',
         thumb_hq: null,
         thumb_back:
           'http://codecanyon.lv/wp-content/uploads/2020/07/wwvyrr1552907652.jpg',

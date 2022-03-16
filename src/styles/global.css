@@ -2,8 +2,57 @@
 :root {
   /* #000000 */
   --black: hsl(0, 0%, 3%);
-  /* #e03ea0 */
-  --magenta-pink-light: hsl(324, 71%, 66%);
+  /* #ADADAD */
+  --grey1: hsl(0, 0%, 68%);
+  /* #5943b0 */
+  --blue-shade1: hsl(252, 45%, 48%);
+  --blue-shade1-rgb: 89, 67, 177;
   /* #e1daff */
   --blue-shade2: hsl(252, 76%, 88%);
+  /* #e03ea0 */
+  --magenta-pink: hsl(324, 72%, 56%);
+  /* #e03ea0 */
+  --magenta-pink-light: hsl(324, 71%, 66%);
+
+  --gradient: linear-gradient(
+    90deg,
+    var(--magenta-pink) 0%,
+    var(--blue-shade1) 100%
+  );
+
+  --transition-shadow: box-shadow 0.7s;
+}
+
+button {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
+a {
+  color: var(--grey1);
+  cursor: pointer;
+  text-decoration: none;
+}
+figure {
+  padding: 0;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
 }

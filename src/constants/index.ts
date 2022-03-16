@@ -6,6 +6,8 @@ import {
   GenreDataType,
 } from '../types';
 
+export const placeholderImage: string = '/assets/img/dummi.png';
+
 export const configMenu: ConfigMenuType = Object.freeze({
   tops: { text: 'Top 5', count: 5, id: 'Top 5' },
   pageSize: 10,

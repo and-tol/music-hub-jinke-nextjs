@@ -6,7 +6,7 @@ type PropsType = {
   children?: never;
 };
 
-export const ErrorShowComponent: FC<PropsType> = (): ReactElement => {
+export const ErrorShowElement: FC<PropsType> = (): ReactElement => {
   return (
     <>
       <div className={styles.container}>

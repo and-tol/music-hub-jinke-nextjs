@@ -1,0 +1,54 @@
+.cardLink:hover .cardSquare {
+  box-shadow: 4px 4px 14px 0 rgba(var(--blue-shade1-rgb), 0.45);
+  transition: var(--transition-shadow);
+}
+
+@media screen and (min-width: 1024px) {
+  .cardLink {
+
+    flex: none;
+    width: 25%;
+    position: relative;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    flex: none;
+    width: 33.3333%;
+  }
+}
+
+.cardSquare {
+  background-color: white;
+  border-radius: 1rem;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-shadow);
+}
+
+.cardImage {
+  position: relative;
+  margin-bottom: calc(52px / 2);
+}
+
+.avatar {
+  position: absolute;
+  height: 52px;
+  width: 52px;
+  display: block;
+  background: var(--gradient);
+  z-index: 1;
+  border-radius: 50%;
+  bottom: calc(-52px / 2);
+  right: 12px;
+}
+.avatar img {
+  max-width: 100%;
+}

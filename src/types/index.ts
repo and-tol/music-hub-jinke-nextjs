@@ -41,8 +41,9 @@ export type ConfigMenuType = {
 };
 
 type FetchingType = {
+  fetchName: string;
   get?: string;
-  getPerPage?: number;
+  getPerPage: number | string;
   getPage?: number;
   pageSize?: number;
   add?: string;
@@ -54,14 +55,22 @@ type FetchingType = {
   getById?: string;
   getLoved?: string;
   changeLoved?: string;
+  fetchingType: FilterType;
 };
 type PartialFetchingType = Partial<FetchingType>;
+
+type CommonFetchingType = {
+  getPerPage: string | number;
+  getPage: string | number;
+  fetchingType: FilterType;
+};
+
 export type FetchingDataType = {
-  common: PartialFetchingType;
+  common: CommonFetchingType;
   generatePlaylistPage: PartialFetchingType;
   genres: PartialFetchingType;
   artists: PartialFetchingType;
-  albums: PartialFetchingType;
+  albums: FetchingType;
   genre: PartialFetchingType;
   artistPage: { tracksSection: PartialFetchingType };
   tracks: PartialFetchingType;

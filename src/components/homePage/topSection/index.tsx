@@ -1,24 +1,29 @@
+// Core
 import { FC, ReactElement, useState } from 'react';
+// Other
+import { useApiLoader } from '../../../api';
+import { configMenu, fetchingData } from '../../../constants';
+// Elements
+import {
+  ErrorShowElement,
+  LoaderElement,
+  SectionHeaderWithTabs,
+  SectionTitleElement,
+} from '../../../elements';
+// Components
+import { SectionLayoutTemplate } from '../../../templates/sectionLayout';
+import { CardAlbumComponent } from '../../common/cards/cardAlbum';
+// Views
+import { SectionContentWithPaginationView } from '../../../views/section/SectionContentWithPagination';
 
-import { useApiLoader } from '../../api';
-import { configMenu, fetchingData } from '../../constants';
-
-// import { CardAlbum } from 'src/shared/components/Cards';
-import { ErrorShow } from 'src/shared/components/ErrorShow';
-import { SectionLayout } from 'src/shared/components/Layouts';
-// import { Loader } from 'src/shared/components/Loader';
-import { SectionHeaderWithTabs, SectionTitleElement } from '../../elements';
-import { SectionLayoutTemplate } from '../../templates/sectionLayout';
-// import {
-//   SectionContentWithPagination,
-//   SectionHeaderWithTabs,
-// } from 'src/shared/components/Section';
+import { dataAlbums } from '../../../../data/dataAlbums';
+import { IAlbumData } from '../../../types/data';
 
 type PropsType = {
   children?: never;
-}
+};
 
-export const TopsSectionComponent: FC<PropsType> = (): ReactElement=> {
+export const TopsSectionComponent: FC<PropsType> = (): ReactElement => {
   // const {
   //   data: dataAlbums,
   //   isLoading,
@@ -44,10 +49,13 @@ export const TopsSectionComponent: FC<PropsType> = (): ReactElement=> {
   //   parameter: filter,
   // });
 
+  const isLoading = false;
+  const totalItemsCount = 3;
+
   //------
 
   // if (isError) {
-  //   return <ErrorShow />;
+  //   return <ErrorShowElement />;
   // }
 
   return (
@@ -61,19 +69,21 @@ export const TopsSectionComponent: FC<PropsType> = (): ReactElement=> {
         setFilter={setFilter}
       />
 
-      {/* {isLoading ? (
-        <Loader />
+      {isLoading ? (
+        <LoaderElement />
       ) : (
-        <SectionContentWithPagination
-          cardsData={dataAlbums ?? []}
-          Component={data => <CardAlbum key={data.id} cardData={data} />}
+        <SectionContentWithPaginationView
+          cardsData={dataAlbums}
+          Component={(data: IAlbumData) => (
+            <CardAlbumComponent key={data.id} cardData={data} />
+          )}
           totalItemsCount={totalItemsCount}
           fetchName='home'
           page='albums'
           fetchingType='getPerPage'
-          parameter={fetchingData.getPerPage}
+          parameter={fetchingData.common.getPerPage}
         />
-      )} */}
+      )}
     </SectionLayoutTemplate>
   );
 };

@@ -4,7 +4,6 @@ import { useApiLoader } from '../../../api';
 import { configMenu, fetchingData } from '../../../constants/index';
 
 import { CardArtist } from 'src/shared/components/Cards';
-import { ErrorShow } from 'src/shared/components/ErrorShow';
 import { SectionLayout } from 'src/shared/components/Layouts';
 import { Loader } from 'src/shared/components/Loader/Loader';
 import {
@@ -13,6 +12,9 @@ import {
   SectionTitle,
 } from 'src/shared/components/Section';
 import { filtersByGenre } from 'src/shared/helpers/fitersByGenre';
+// Element
+import {  ErrorShowElement } from '../../../elements/errorShow';
+import { LoaderElement } from '../../../elements/loader';
 
 export const ArtistsSection = () => {
   // TODO change filter to "Top 5"
@@ -39,7 +41,7 @@ export const ArtistsSection = () => {
   // const data = filtersByGenre(dataArtists, currentGenre?.toLowerCase());
 
   if (isErrorArtistsSection) {
-    return <ErrorShow />;
+    return <ErrorShowElement />;
   }
 
   return (
@@ -55,7 +57,7 @@ export const ArtistsSection = () => {
         getCurrentButton={getCurrentButton}
       />
       {isLoadingArtistsSection ? (
-        <Loader />
+        <LoaderElement />
       ) : (
         <SectionContentWithPagination
           cardsData={dataArtists}

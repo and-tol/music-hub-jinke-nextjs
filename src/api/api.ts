@@ -290,7 +290,7 @@ export const api = Object.freeze({
       playlistId,
       playlist,
     }: {
-      playlistId: number;
+      playlistId: string;
       playlist: string;
     }) => {
       return null;
@@ -344,8 +344,8 @@ export const api = Object.freeze({
       playlistId,
       trackId,
     }: {
-      playlistId: number;
-      trackId: number;
+      playlistId: string;
+      trackId: string;
     }) => {
       return null;
       // return fetch(`${FAKEAPI}/playlists?name=${playlist}?tracks=${trackId}`, {
@@ -372,7 +372,7 @@ export const api = Object.freeze({
       playlistId,
       track,
     }: {
-      playlistId: number;
+      playlistId: string;
       track: { artists: string };
     }) => {
       // return fetch(`${FAKEAPI}/playlists?name=${playlist}?tracks=${trackId}`, {
@@ -406,8 +406,8 @@ export const api = Object.freeze({
       playlistId,
       trackId,
     }: {
-      playlistId: number;
-      trackId: number;
+      playlistId: string;
+      trackId: string;
     }) => {
       const resp = await fetch(`${FAKEAPI}playlists/${playlistId}/${trackId}`, {
         method: 'DELETE',

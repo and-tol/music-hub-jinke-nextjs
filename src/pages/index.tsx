@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { ReactElement } from 'react';
 import { AppView } from '../views/app';
 // Components
-import { TopsSectionComponent } from '../components/topSectionHomePage';
+import { TopsSectionComponent } from '../components/homePage/topSection';
 // import {
   // ArtistsSection,
   // TopAlbumsSection,
