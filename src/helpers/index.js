@@ -6,3 +6,4 @@ export * from './getCurrentLocationForFetch';
 export * from './getCurrentLocation';
 export * from './isObjEmpty';
 export * from './createListByName';
+export * from './fitersByGenre';

@@ -30,7 +30,7 @@ export const useApiLoader = ({
 }: PropsType): ReturnedType => {
   const { data, isError, error, isLoading } = useQuery(
     [fetchName, [fetchingType, parameter]],
-    () => fetchData(fetchName, fetchingType, parameter)
+    () => fetchData({fetchName, fetchingType, parameter})
   );
 
   // const totalItemsCount = data?.length ?? 0;

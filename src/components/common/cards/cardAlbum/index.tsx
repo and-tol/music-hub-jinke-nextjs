@@ -39,8 +39,8 @@ export const CardAlbumComponent: FC<PropsType> = ({
     parameter: albumId,
   });
   if (!albumData || isObjEmpty(albumData)) {
-    console.error(
-      'No array data album in CardAlbumComponent: fetchingData.albums'
+    console.log(
+      'ERROR: No array data album in CardAlbumComponent: fetchingData.albums'
     );
   }
 

@@ -1,0 +1,49 @@
+.card {
+  border-radius: 1rem;
+  box-shadow: none;
+  max-width: 100%;
+  position: relative;
+  background-color: transparent;
+  overflow: visible;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: var(--transition-shadow);
+}
+
+.image {
+  border-radius: 50%;
+  height: auto;
+  max-width: 100%;
+}
+.image:hover {
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-shadow);
+}
+
+.cardContent {
+  width: 0;
+  min-width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+  background-color: transparent;
+  min-height: 36px;
+}
+
+.title {
+  white-space: nowrap;
+
+  color: #363636;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.125;
+  word-break: break-word;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+}

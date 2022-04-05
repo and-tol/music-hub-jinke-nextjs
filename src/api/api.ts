@@ -1,10 +1,17 @@
+import axios from 'axios';
 import { fromObjectToString } from '../helpers/fromObjectToString';
 import { FAKEAPI, MUSIC_HUB_REST_URL, WP } from './config';
+import { BASE_URL } from '../config';
+import { IAlbumData } from '../types/data';
+
+interface IApi {
+  [key: string]: any;
+}
 
 /*
 const totalItemsCount = await Number(response.headers.get('x-wp-total'));
 */
-export const api = Object.freeze({
+export const api: Readonly<IApi> = Object.freeze({
   genres: {
     getPerPage: async (per_page: number) => {
       const resp = await fetch(`${WP}/genres?per_page=${per_page}`, {
@@ -60,18 +67,18 @@ export const api = Object.freeze({
     },
   },
   albums: {
-    getPerPage: async (per_page = 1) => {
-      const resp = await fetch(`${WP}/albums?per_page=${per_page}`, {
-        method: 'GET',
+    getPerPage: async (
+      per_page = 1
+    ): Promise<{ data: IAlbumData[]; status: number }> => {
+      const response = await axios.get<IAlbumData[]>(`${BASE_URL}/api/albums`, {
+        params: { per_page },
       });
 
-      if (!resp.ok) {
+      if (response.statusText !== 'OK') {
         throw new Error('Something want wrong fetching albums');
       }
 
-      const result = await resp.json();
-
-      return result;
+      return { data: response.data, status: response.status };
     },
     getPage: async (page: string) => {
       const resp = await fetch(`${WP}/albums?page=${page}`, {
@@ -88,19 +95,18 @@ export const api = Object.freeze({
 
       return { result, totalItemsCount };
     },
-    getById: async (albumId: string) => {
-      // const resp = await fetch(`${WP}/albums/${id}`, {
-      const resp = await fetch(`${FAKEAPI}/albums/${albumId}`, {
-        method: 'GET',
+    getById: async (
+      albumId: string
+    ): Promise<{ data: IAlbumData[]; status: number }> => {
+      const response = await axios.get<IAlbumData[]>(`${BASE_URL}/api/albums`, {
+        params: { albumId },
       });
 
-      if (!resp.ok) {
+      if (response.statusText !== 'OK') {
         throw new Error('Something want wrong fetching albums');
       }
 
-      const result = await resp.json();
-
-      return result;
+      return { data: response.data, status: response.status };
     },
     getByFilter: async (param: string) => {
       //  const resp = await fetch(`${WP}/albums?filter=${filter}`, {

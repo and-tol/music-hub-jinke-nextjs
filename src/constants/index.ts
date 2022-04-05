@@ -489,3 +489,7 @@ export const cardsData: CardDataType[] = [
     subtitle: 'Alternative Tehno',
   },
 ];
+
+export interface IDataButtons{
+  tops:[]
+}

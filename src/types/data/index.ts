@@ -37,4 +37,13 @@ export interface IImages {
   album_face?: string | null;
   album_flat?: string | null;
   faceImg?: string;
+  artistImg?: string;
+}
+
+export interface IArtistCardData {
+  id: string;
+  name: string;
+  short_description: string;
+  // musicHub: IMusicHub;
+  artistImg?: string;
 }

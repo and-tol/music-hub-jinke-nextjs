@@ -1,16 +1,12 @@
 // Core
 import cls from 'classnames';
 import { FC, ReactElement, ReactNode } from 'react';
-
-import { configMenu } from '../../../constants';
-
 // import { useContentToPagination } from 'src/shared/hooks/useContentToPagination';
 // import { Pagination, PaginationWithRoute } from '../Pagination';
-
-import { IAlbumData } from '../../../types/data';
+import { IAlbumData, IArtistCardData } from '../../../types/data';
 
 type PropsType = {
-  cardsData: IAlbumData[];
+  cardsData: IAlbumData[] | IArtistCardData[];
   Component: (cardData: IAlbumData) => ReactNode;
   hasRouting?: boolean;
   fetchName: string;
@@ -22,13 +18,13 @@ type PropsType = {
 };
 
 export const SectionContentWithPaginationView: FC<PropsType> = ({
-  hasRouting=false,
   cardsData = [],
   Component,
   fetchName,
   page = null,
   totalItemsCount,
   isSubSection = false,
+  hasRouting = true,
   // setCurrentPage,// !
 }): ReactElement => {
   // const {
@@ -41,24 +37,20 @@ export const SectionContentWithPaginationView: FC<PropsType> = ({
   //   pageSize: configMenu.pageSize,
   // });
 
-  const currentCards: any[]=[];
-  // const isSubSection = false;
+  const currentCards: any[] = [];
 
   return (
     <section className={cls('section', isSubSection && 'pt-0')}>
-      <div className='container'>
-        <div className='columns is-multiline'>
-          {
-            cardsData &&
-            hasRouting &&
-            cardsData?.map(cardData => Component(cardData))
-          }
-          {cardsData &&
-            !hasRouting &&
-            currentCards?.map(cardData => Component(cardData))}
-        </div>
+      <div className='cardContainer '>
+        {cardsData &&
+          hasRouting &&
+          cardsData?.map(cardData => Component(cardData))}
+        {cardsData &&
+          !hasRouting &&
+          currentCards?.map(cardData => Component(cardData))}
+
         {/* {hasRouting ? (
-          <PaginationWithRoute
+          <PaginationWithRouteComponent
             fetchName={fetchName}
             page={typeof page === 'number' ? page : Number(page)}
             totalItemsCount={totalItemsCount}

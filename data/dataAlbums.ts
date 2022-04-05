@@ -1,4 +1,6 @@
-export const dataAlbums = [
+import { IAlbumData } from '../src/types/data';
+
+export const dataAlbums: IAlbumData[] = [
   {
     id: '2481',
     name: 'Dangerous Woman',

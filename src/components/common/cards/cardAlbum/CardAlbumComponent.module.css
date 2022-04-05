@@ -1,26 +1,25 @@
 .cardLink:hover .cardSquare {
-  box-shadow: 4px 4px 14px 0 rgba(var(--blue-shade1-rgb), 0.45);
+  box-shadow: var(--box-shadow);
   transition: var(--transition-shadow);
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .cardLink {
-
-    flex: none;
-    width: 25%;
+    /* flex: none;
+    width: 25%; */
     position: relative;
     display: block;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
-    padding: 0.75rem;
+    /* padding: 0.75rem; */
   }
 }
 
-@media screen and (min-width: 769px) {
+@media (min-width: 769px) {
   .card {
-    flex: none;
-    width: 33.3333%;
+    /* flex: none;
+    width: 33.3333%; */
   }
 }
 

@@ -1,52 +1,63 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { useApiLoader } from '../../../api';
-import { configMenu, fetchingData } from '../../../constants/index';
+import { configMenu, fetchingData } from '../../../constants';
 
-import { CardArtist } from 'src/shared/components/Cards';
-import { SectionLayout } from 'src/shared/components/Layouts';
-import { Loader } from 'src/shared/components/Loader/Loader';
+import { CardArtistComponent } from '../../../components';
+import { SectionLayoutTemplate } from '../../../templates';
 import {
-  SectionContentWithPagination,
+  SectionContentWithPaginationView,
   SectionHeaderWithButtons,
-  SectionTitle,
-} from 'src/shared/components/Section';
-import { filtersByGenre } from 'src/shared/helpers/fitersByGenre';
-// Element
-import {  ErrorShowElement } from '../../../elements/errorShow';
-import { LoaderElement } from '../../../elements/loader';
+} from '../../../views/section';
+import { filtersByGenre } from '../../../helpers';
+// Elements
+import { SectionTitleElement } from '../../../elements';
+import { ErrorShowElement, LoaderElement } from '../../../elements';
 
-export const ArtistsSection = () => {
+import {dataArtists as dataArtistsMook} from '../../../../data/dataArtists'
+import {dataAlbums} from '../../../../data/dataAlbums'
+import { IArtistCardData } from '../../../types/data';
+
+type PropsType = {
+  children?: never;
+};
+
+export const ArtistsSectionComponent: FC<PropsType> = () => {
   // TODO change filter to "Top 5"
-  const [filter, setFilter] = useState('all'); // initial "Top 5"
-  const getCurrentButton = filter => {
+  const [filter, setFilter] = useState<string>('all'); // initial "Top 5"
+  const getCurrentButton = (filter: string): void => {
     setFilter(filter);
   };
 
-  const {
-    data: dataArtists,
-    isLoading: isLoadingArtistsSection,
-    isError: isErrorArtistsSection,
-    totalItemsCount,
-  } = useApiLoader({
-    fetchName: fetchingData.artists.fetchName,
-    fetchingType: fetchingData.artists.fetchingType.getByFilter,
-    // fetchingType: fetchingData.artists.fetchingType.getPerPage,
-    // parameter: fetchingData.artists.getPerPage,
-    parameter: filter,
-  });
+  // const {
+  //   data: dataArtists,
+  //   isLoading: isLoadingArtistsSection,
+  //   isError: isErrorArtistsSection,
+  //   totalItemsCount,
+  // } = useApiLoader({
+  //   fetchName: fetchingData.artists.fetchName,
+  //   fetchingType: fetchingData.artists.fetchingType.getByFilter,
+  //   // fetchingType: fetchingData.artists.fetchingType.getPerPage,
+  //   // parameter: fetchingData.artists.getPerPage,
+  //   parameter: filter,
+  // });
 
   // TODO
   // const [currentGenre, setCurrentGenre] = useState('');
   // const data = filtersByGenre(dataArtists, currentGenre?.toLowerCase());
 
-  if (isErrorArtistsSection) {
-    return <ErrorShowElement />;
-  }
+  const isErrorArtistsSection = false;
+  const isLoadingArtistsSection = false;
+  const dataArtists: IArtistCardData[] = dataArtistsMook;
+  const totalItemsCount = 15;
+
+  // if (isErrorArtistsSection) {
+  //   return <ErrorShowElement />;
+  // }
 
   return (
-    <SectionLayout id='top-artists'>
-      <SectionTitle title='Artists' />
+    <SectionLayoutTemplate id='top-artists'>
+      <SectionTitleElement title='Artists' />
       <SectionHeaderWithButtons
         id='top-artists-header'
         isCentered
@@ -56,19 +67,21 @@ export const ArtistsSection = () => {
         goTo={configMenu.menu.toArtists}
         getCurrentButton={getCurrentButton}
       />
-      {isLoadingArtistsSection ? (
-        <LoaderElement />
-      ) : (
-        <SectionContentWithPagination
+      {isErrorArtistsSection && <ErrorShowElement />}
+      {isLoadingArtistsSection && <LoaderElement />}
+      {dataArtists && (
+        <SectionContentWithPaginationView
           cardsData={dataArtists}
-          Component={data => <CardArtist key={data.id} cardData={data} />}
+          Component={(data: any) => (
+            <CardArtistComponent key={data.id} cardData={data} />
+          )}
           totalItemsCount={totalItemsCount}
           fetchName='home'
           page='artists'
           fetchingType='getPerPage'
-          parameter={fetchingData.getPerPage}
+          parameter={fetchingData.common.getPerPage}
         />
       )}
-    </SectionLayout>
+    </SectionLayoutTemplate>
   );
 };

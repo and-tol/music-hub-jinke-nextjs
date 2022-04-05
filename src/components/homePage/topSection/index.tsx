@@ -14,16 +14,19 @@ import {
 import { SectionLayoutTemplate } from '../../../templates/sectionLayout';
 import { CardAlbumComponent } from '../../common/cards/cardAlbum';
 // Views
-import { SectionContentWithPaginationView } from '../../../views/section/SectionContentWithPagination';
+import { SectionContentWithPaginationView } from '../../../views/section';
 
-import { dataAlbums } from '../../../../data/dataAlbums';
+// import { dataAlbums } from '../../../../data/dataAlbums';
 import { IAlbumData } from '../../../types/data';
 
 type PropsType = {
   children?: never;
+  dataAlbums: IAlbumData[];
 };
 
-export const TopsSectionComponent: FC<PropsType> = (): ReactElement => {
+export const TopsSectionComponent: FC<PropsType> = ({
+  dataAlbums,
+}): ReactElement => {
   // const {
   //   data: dataAlbums,
   //   isLoading,

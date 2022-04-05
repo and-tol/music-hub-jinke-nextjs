@@ -4,7 +4,7 @@
   --black: hsl(0, 0%, 3%);
   /* #ADADAD */
   --grey1: hsl(0, 0%, 68%);
-  /* #5943b0 */
+  /* #5943b0 box shadow */
   --blue-shade1: hsl(252, 45%, 48%);
   --blue-shade1-rgb: 89, 67, 177;
   /* #e1daff */
@@ -21,6 +21,7 @@
   );
 
   --transition-shadow: box-shadow 0.7s;
+  --box-shadow: 4px 4px 14px 0 rgba(var(--blue-shade1-rgb), 0.45);
 }
 
 button {
