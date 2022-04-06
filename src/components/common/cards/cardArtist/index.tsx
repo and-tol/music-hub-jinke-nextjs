@@ -31,10 +31,8 @@ export const CardArtistComponent: FC<PropsType> = ({
         </figure>
 
         <div className={styles.cardContent}>
-          {/* <div className='media-content'> */}
             <p className={styles.title}>{name}</p>
             <p className={styles.subtitle}>{short_description}</p>
-          {/* </div> */}
         </div>
       </div>
     </Link>
